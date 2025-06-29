@@ -9,8 +9,8 @@ services:
       - GID=1000
       - GIDLIST=1000
     volumes:
-      - /home/frederico/MediaServer/apps/emby/programdata:/config # Configuration directory
-      - /home/frederico/MediaServer/data:/library # Media directory
+      - ./apps/emby/programdata:/config # Configuration directory
+      - ./data/media:/library # Media directory
     ports:
       - 8096:8096 # HTTP port
       - 8920:8920 # HTTPS port
@@ -40,13 +40,13 @@ services:
       - TZ=Australia/Brisbane
     volumes:
       - ./protonvpn/:/etc/openvpn/custom/
-      - /home/frederico/MediaServer/data/downloads:/data
-      - /home/frederico/MediaServer/apps/transmission:/config
+      - ./data/downloads:/data
+      - ./apps/transmission:/config
       - /etc/localtime:/etc/localtime:ro
     cap_add:
       - NET_ADMIN
     secrets:
-        - openvpn_creds
+      - openvpn_creds
 
   # https://github.com/linuxserver/docker-jackett
   jackett:
@@ -58,7 +58,7 @@ services:
         - TZ=Australia/Brisbane
         - AUTO_UPDATE=true
     volumes:
-        - /home/frederico/MediaServer/apps/jackett:/config
+        - ./apps/jackett:/config
     # You have to comment ports, they should be managed in transmission-openvpn section now.
 #       ports:
 #           - 9117:9117
@@ -87,9 +87,9 @@ services:
       - PUID=1000
       - TZ=Australia/Brisbane
     volumes:
-      - /home/frederico/MediaServer/apps/radarr:/config
-      - /home/frederico/MediaServer/data/media/movies:/movies
-      - /home/frederico/MediaServer/data/downloads:/data/
+      - ./apps/radarr:/config
+      - ./data/media/movies:/movies
+      - ./data/downloads:/data/
 
   # https://github.com/linuxserver/docker-sonarr
   sonarr:
@@ -103,9 +103,9 @@ services:
       - PUID=1000
       - TZ=Australia/Brisbane
     volumes:
-      - /home/frederico/MediaServer/apps/sonarr:/config
-      - /home/frederico/MediaServer/data/media/tv:/tv
-      - /home/frederico/MediaServer/data/downloads:/data
+      - ./apps/sonarr:/config
+      - ./data/media/tv:/tv
+      - ./data/downloads:/data
 
   # https://github.com/dperson/samba
   samba:
@@ -126,7 +126,7 @@ services:
       - SHARE=Media;/library
       - TZ=Australia/Brisbane
     volumes:
-      - /home/frederico/MediaServer/data:/library
+      - ./data:/library
 secrets:
     openvpn_creds:
         file: ./openvpn_creds
