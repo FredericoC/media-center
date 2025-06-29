@@ -129,4 +129,4 @@ services:
       - ./data:/library
 secrets:
     openvpn_creds:
-        file: ./openvpn_creds
+        file: ./protonvpn/openvpn_creds
