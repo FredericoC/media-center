@@ -1,19 +1,19 @@
 # Intro
 Quick setup for Emby, Radarr, Sonarr, Jackett and Transmission (ProtonVPN) using Docker
 
-*Emby*
+*[Emby](https://hub.docker.com/r/emby/embyserver_arm64v8)*
 A personal media server application like Plex. Has an app to stream your movie/tv show/etc library.
 
-*Radarr*
+*[Radarr](https://github.com/linuxserver/docker-radarr)*
 Automatically download, manage, and organise movies (only). Depends on Jackett for Torrent site search and Transmission for torrent download
 
-*Sonarr*
+*[Sonarr](https://github.com/linuxserver/docker-sonarr)*
 Same as Radarr but for TV shows.
 
-*Jackett*
+*[Jackett](https://github.com/linuxserver/docker-jackett)*
 Jackett acts as a bridge between Radarr, Sonarr and torrent or Usenet indexers.
 
-*Transmission* 
+*[Transmission](https://github.com/haugene/docker-transmission-openvpn)* 
 Bittorrent client. We're using a docker image that enforces OpenVPN when downloading Transmission.
 
 ## Requirements:
