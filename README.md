@@ -1,5 +1,5 @@
 # docker-compose-radarr-sonarr-prowlarr-transmission
-Quick setup for Emby, Radarr, Sonarr, Jackett and Transmission
+Quick setup for Emby, Radarr, Sonarr, Jackett and Transmission (ProtonVPN) using Docker
 
 *Emby*
 A personal media server application like Plex. Has an app to stream your movie/tv show/etc library.
