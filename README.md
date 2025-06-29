@@ -50,7 +50,7 @@ Notes about configuring ProtonVPN;
 **Directories / Volumes setup**
 
 Both Radarr and Sonarr copy completed downloads from Transmission's "downloads" folder into their configured "root folders".
-The "root folder" is configured on web interface for Radarr & Sonarr via the "Settings > Media Management" page and it should be `/movies` for Radarr and  `/tv` for Sonarr.
+The "root folder" is configured on web interface for Radarr & Sonarr via the "Settings > Media Management" page and it should be `/data/media/movies` for Radarr and  `/data/media/tv` for Sonarr.
 Do not include the `/data` folder as a root folder. 
 
 Folder structure is
@@ -67,12 +67,11 @@ apps # configuration folders
 └───sonarr
 └───transmission
 data
+└───completed # managed by transmission
+└───incomplete # managed by transmission
 └───media
 │   └───movies
 │   └───tv
-└───downloads # managed by transmission
-│   └───completed
-│   └───incomplete
 ```
 
 - Download `*.protonvpn.udp.ovpn` from https://account.protonvpn.com/downloads
@@ -114,3 +113,6 @@ https://github.com/dperson/samba#configuration
   For example: `docker compose logs radarr`
 * Container can connect between eachother on their name in the compose file, for example `http://jackett:9117` as Jackett Server and `http://radarr:7878` as Radarr server.
 * Update the containers to their latest version with `docker compose pull` and `docker compose up -d`
+
+## TODO
+- Harden access & verify authentication for all systems.

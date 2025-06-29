@@ -40,7 +40,7 @@ services:
       - TZ=Australia/Brisbane
     volumes:
       - ./protonvpn/:/etc/openvpn/custom/
-      - ./data/downloads:/data
+      - ./data:/data
       - ./apps/transmission:/config
       - /etc/localtime:/etc/localtime:ro
     cap_add:
@@ -88,8 +88,7 @@ services:
       - TZ=Australia/Brisbane
     volumes:
       - ./apps/radarr:/config
-      - ./data/media/movies:/movies
-      - ./data/downloads:/data/
+      - ./data:/data/
 
   # https://github.com/linuxserver/docker-sonarr
   sonarr:
@@ -104,8 +103,7 @@ services:
       - TZ=Australia/Brisbane
     volumes:
       - ./apps/sonarr:/config
-      - ./data/media/tv:/tv
-      - ./data/downloads:/data
+      - ./data:/data/
 
   # https://github.com/dperson/samba
   samba:

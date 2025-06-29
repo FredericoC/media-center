@@ -6,7 +6,7 @@
 mkdir -p protonvpn
 mkdir -p apps/{emby,jackett,radarr,sonarr,transmission}
 mkdir -p data/media/{movies,tv}
-mkdir -p data/downloads/{completed,incomplete,watch}
+mkdir -p data/{completed,incomplete,watch}
 
 # 2. Create the openvpn_creds file only if it doesn't already exist
 if [[ -f "protonvpn/openvpn_creds" ]]; then
