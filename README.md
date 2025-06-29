@@ -1,4 +1,4 @@
-# docker-compose-radarr-sonarr-prowlarr-transmission
+# Intro
 Quick setup for Emby, Radarr, Sonarr, Jackett and Transmission (ProtonVPN) using Docker
 
 *Emby*
